@@ -16,6 +16,7 @@ namespace ScadaTool.ViewModel
         public MainViewModel()
         {
 
+            #region 图标闪烁
             bool tmp = false;
             var timer = new System.Timers.Timer(1000);
             timer.Elapsed += new System.Timers.ElapsedEventHandler((obj, args) =>
@@ -24,6 +25,7 @@ namespace ScadaTool.ViewModel
                 tmp = tmp == true ? false : true;
             });
             timer.Start();
+            #endregion
 
             #region Command
             ExitApplicationCommand = new RelayCommand((_) =>
@@ -46,6 +48,17 @@ namespace ScadaTool.ViewModel
                 {
                     Application.Current.MainWindow.Show();
                     Application.Current.MainWindow.Activate();
+                });
+            });
+
+            HidenApplicationCommand = new RelayCommand((_) =>
+            {
+                return true;
+            }, (_) =>
+            {
+                ViewModelHelper.Instance().UpdateUI(() =>
+                {
+                    Application.Current.MainWindow.Hide();
                 });
             });
 

@@ -28,6 +28,7 @@
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="显示窗口" Command="{Binding ShowWindowCommand}" />
+                    <MenuItem Header="关闭窗口" Command="{Binding HidenApplicationCommand}" />
                     <Separator />
                     <MenuItem Header="退出" Command="{Binding ExitApplicationCommand}" />
                 </ContextMenu>
