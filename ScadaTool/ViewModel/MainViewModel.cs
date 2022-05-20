@@ -71,13 +71,13 @@ namespace ScadaTool.ViewModel
                 string result = GoCSharpHelper.Instance().GoStringToCSharpString(run());
                 if (result.Equals("success"))
                 {
-                    MessageBox.Show("服务已开启\n返回结果: " + result);
+                    MessageBox.Show("服务启动\n" + result);
                     icoPath = "Resources/icon.ico";
                     timer.Dispose();
                 }
                 else
                 {
-                    MessageBox.Show("服务开启失败\n返回结果: " + result);
+                    MessageBox.Show("服务启动失败\n" + result);
                 }
             });
             #endregion
